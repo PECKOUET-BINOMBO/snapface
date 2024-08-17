@@ -1,0 +1,27 @@
+.face-snap-card {
+      width: 300px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      margin-bottom: 20px;
+
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+        .text{
+          padding: 5px 10px;
+        }
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 10px 10px 0 0;
+          -webkit-border-radius: 10px 10px 0 0;
+          -moz-border-radius: 10px 10px 0 0;
+          -ms-border-radius: 10px 10px 0 0;
+          -o-border-radius: 10px 10px 0 0;
+      }
+    }
+
