@@ -1,12 +1,21 @@
-<div class="face-snap-card">
+<div class="face-snap-card me-3">
   <img [src]="faceSnap.imageUrl" [alt]="faceSnap.titre" />
   <div class="text">
-    <h2>{{ faceSnap.titre }}</h2>
-    <p>{{ faceSnap.description }}</p>
-    <p>FaceSnap crée le {{ faceSnap.createdAt }}</p>
-    <p>
-      <button (click)="onSnap()">{{snapButtonText}}</button>
-      ✋{{ faceSnap.snaps }}
-    </p>
+    <h2 class="font-bold text-md text-gray-700">{{ faceSnap.titre }}</h2>
+    <div class="text-gray-500 font-medium my-2">
+      @if (faceSnap.location) {
+      <p>Localisation : {{ faceSnap.location }}</p>
+      } @else{
+      <p>Localisation non spécifié</p>
+      }
+      <p>{{ faceSnap.description }}</p>
+      <p>FaceSnap crée le {{ faceSnap.createdAt }}</p>
+    </div>
+    <div class="font-medium text-gray-400 mb-4">
+      <button class="btn shadow-xl rounded py-1 px-2 bg-gray-200" [ngClass]="{snapped: userHasSnapped}" (click)="onSnap()">
+        {{ snapButtonText }}
+      </button>
+      <span [ngStyle]="{color: 'rgb(0, '+ faceSnap.snaps +', 0)' }">✋{{ faceSnap.snaps }}</span>
+    </div>
   </div>
 </div>
