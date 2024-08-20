@@ -1,7 +1,7 @@
 <div class="face-snap-card me-3">
   <img [src]="faceSnap.imageUrl" [alt]="faceSnap.titre" />
   <div class="text">
-    <h2 class="font-bold text-md text-gray-700">{{ faceSnap.titre }}</h2>
+    <h2 class="font-bold text-md text-gray-700">{{ faceSnap.titre |uppercase}}</h2>
     <div class="text-gray-500 font-medium my-2">
       @if (faceSnap.location) {
       <p>Localisation : {{ faceSnap.location }}</p>
@@ -9,7 +9,7 @@
       <p>Localisation non spécifié</p>
       }
       <p>{{ faceSnap.description }}</p>
-      <p>FaceSnap crée le {{ faceSnap.createdAt }}</p>
+      <p>FaceSnap crée le {{ faceSnap.createdAt|date:'d MMM YYY à HH:MM'  }}</p>
     </div>
     <div class="font-medium text-gray-400 mb-4">
       <button class="btn shadow-xl rounded py-1 px-2 bg-gray-200" [ngClass]="{snapped: userHasSnapped}" (click)="onSnap()">
